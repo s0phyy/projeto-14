@@ -1,10 +1,8 @@
-var bow , arrow,  background;
-var bowImage, arrowImage, green_balloonImage, red_balloonImage, pink_balloonImage ,blue_balloonImage, backgroundImage;
+var bow , arrow, arrowImage, green_balloonImage, red_balloonImage, pink_balloonImage ,blue_balloonImage
 var balloon;
 
 function preload(){
   
-  backgroundImage = loadImage("background0.png");
   arrowImage = loadImage("arrow0.png");
   bowImage = loadImage("bow0.png");
   red_balloonImage = loadImage("red_balloon0.png");
@@ -21,7 +19,7 @@ function setup() {
   
   //criar um plano de fundo
   scene = createSprite(0,0,400,400);
-  scene.addImage(backgroundImage);
+  scene.addImage(back.round(random))
   scene.scale = 2.5
   
   // criar um arco para a flecha
@@ -32,11 +30,10 @@ function setup() {
 }
 
 function draw() {
- background(0);
-  // mover o chão
+ back.round(random)
     scene.velocityX = -3 
 
-    if (scene.x < 0){
+   if (scene.x < 0){
       scene.x = scene.width/2;
     }
   
@@ -53,7 +50,7 @@ function draw() {
   var select_balloon = Math.round(random(1,1));
   
   if (World.frameCount % 100 == 0) {
-   switch(Math.random(round(1,4))){
+   switch(Math.random.round(random(1,4))){
     case 1: //chamar o balãovermelho
      redBalloon();
      break;
